@@ -61,7 +61,7 @@ void loop()
     // PID controller
     float curError = (float) (target - pos);
 
-    float tolerance = max(5, abs(target) * 0.05); // 5% tolerance
+    float tolerance = max(5.0, abs(target) * 0.05); // 5% tolerance
     if (abs(curError) < tolerance)
     {
         setMotor(0, 0);
