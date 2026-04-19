@@ -70,7 +70,7 @@ void loop()
 
     // Set the motor using the PWM value got from the PID controller
     int pwmVal = min((int) abs(pid), 255);
-    int dir = pid > 0 ? -1 : 1; // CONVENTION
+    int dir = pid > 0 ? 1 : -1; // CONVENTION
     setMotor(pwmVal, dir);
 
     prevError = curError;
