@@ -39,14 +39,8 @@ void setup()
 
 void loop()
 {
-    // Read 'target' from Serial input
-    if (Serial.available())
-    {
-        String input = Serial.readStringUntil('\n');
-        target = input.toInt();
-        prevError = 0;
-        integral = 0;
-    }
+    // Sinusoidal target
+    target = 1000 * sin(prevTime * 1e-6);
 
     // Prevents race condition
     noInterrupts();
